@@ -8,7 +8,7 @@ const App = () => (
     <div>
       <ul>
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/">Acme Store</Link>
         </li>
         <li>
           <Link to="/cart">Cart</Link>
