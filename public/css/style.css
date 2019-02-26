@@ -3640,7 +3640,8 @@ nav {
   line-height: 80px;
   display: flex;
   justify-content: space-between;
-  align-items: center; }
+  align-items: center;
+  border-bottom: 1px solid #969696; }
 
 ul {
   margin: 0;
@@ -3652,4 +3653,10 @@ ul {
     display: inline-block;
     text-align: center; }
     ul li a {
-      display: block; }
+      display: block;
+      text-decoration: none; }
+
+.site-logo {
+  font-weight: bold; }
+  .site-logo a {
+    text-decoration: none; }

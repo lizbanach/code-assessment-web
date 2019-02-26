@@ -6,6 +6,7 @@ nav {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	border-bottom: 1px solid $gray;
 }
 
 ul {
@@ -21,6 +22,14 @@ ul {
 
 		a {
 			display: block;
+			text-decoration: none;
 		}
+	}
+}
+
+.site-logo {
+	font-weight: bold;
+	a {
+		text-decoration: none;
 	}
 }

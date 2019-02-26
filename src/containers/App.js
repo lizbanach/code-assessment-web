@@ -5,12 +5,12 @@ import CartContainer from './CartContainer'
 
 const App = () => (
   <Router>
-    <div>
+    <div className="container">
       <nav>
+        <div className="site-logo">
+          <Link to="/">Acme Store</Link>
+        </div>
         <ul>
-          <li>
-            <Link to="/">Acme Store</Link>
-          </li>
           <li>
             <Link to="/cart">Cart</Link>
           </li>
