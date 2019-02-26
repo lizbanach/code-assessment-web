@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import CartItem from './CartItem'
-import { removeFromCart } from '../actions'
+import { removeFromCart, increaseQuantity, decreaseQuantity } from '../actions'
 import { connect } from 'react-redux'
 import { getCartProducts } from '../reducers'
 
-const Cart  = ({ products, total, onCheckoutClicked, removeFromCart }) => {
+const Cart  = ({ products, total, onCheckoutClicked, removeFromCart, increaseQuantity, decreaseQuantity }) => {
   const hasProducts = products.length > 0
   const nodes = hasProducts ? (
     products.map(product =>
@@ -15,6 +15,8 @@ const Cart  = ({ products, total, onCheckoutClicked, removeFromCart }) => {
         quantity={product.quantity}
         key={product.id}
         onRemoveClicked={() => removeFromCart(product.id)}
+        onIncreaseClicked={() => increaseQuantity(product.id)}
+        onDecreasedClicked={() => decreaseQuantity(product.id)}
       />
     )
   ) : (
@@ -38,7 +40,9 @@ Cart.propTypes = {
   products: PropTypes.array,
   total: PropTypes.string,
   onCheckoutClicked: PropTypes.func,
-  removeFromCart: PropTypes.func
+  removeFromCart: PropTypes.func,
+  increaseQuantity: PropTypes.func,
+  decreaseQuantity: PropTypes.func
 }
 
 const mapStateToProps = (state) => ({
@@ -47,5 +51,5 @@ const mapStateToProps = (state) => ({
 
 export default connect(
   mapStateToProps,
-  { removeFromCart }
+  { removeFromCart, increaseQuantity, decreaseQuantity }
 )(Cart)

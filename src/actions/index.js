@@ -18,18 +18,26 @@ export const getAllProducts = () => dispatch => {
   })
 }
 
-export const increaseQuantity = productId => dispatch => {
-  dispatch({
-    type: types.INCREASE_QUANTITY,
-    productId
-  })
+const increaseItem = (productId, quantity) => ({
+  type: types.INCREASE_QUANTITY,
+  productId,
+  quantity
+})
+
+export const increaseQuantity = productId => (dispatch, getState) => {
+  const quantity = getState().cart.quantityById[productId]
+  dispatch(increaseItem(productId, quantity))
 }
 
-export const decreaseQuantity = productId => dispatch => {
-  dispatch({
-    type: types.DECREASE_QUANTITY,
-    productId
-  })
+const decreaseItem = (productId, quantity) => ({
+  type: types.DECREASE_QUANTITY,
+  productId,
+  quantity
+})
+
+export const decreaseQuantity = productId => (dispatch, getState) => {
+  const quantity = getState().cart.quantityById[productId]
+  dispatch(decreaseItem(productId, quantity))
 }
 
 const addToCartUnsafe = productId => ({
