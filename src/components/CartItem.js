@@ -8,6 +8,7 @@ const CartItem = ({ price, inventory, title, onRemoveClicked, onIncreaseClicked,
       onClick={onRemoveClicked}>
       Remove
     </button>
+    <div>
     <button
       onClick={onIncreaseClicked}>
       +
@@ -16,6 +17,7 @@ const CartItem = ({ price, inventory, title, onRemoveClicked, onIncreaseClicked,
       onClick={onDecreaseClicked}>
       -
     </button>
+    </div>
   </div>
 )
 
