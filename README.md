@@ -16,7 +16,8 @@ npm start
 ### 2. [Enhance Cart Functionality](/tasks/02-cart-enhancements.md)
 
 - [X] Remove item
-- [ ] Update item quantity
+- [X] Increase item quantity
+- [ ] Decrease item quantity
 
 ### 3. [Hook Up Product API](/tasks/03-product-api.md)
 
