@@ -1,0 +1,67 @@
+@mixin column () {
+  box-sizing: border-box;
+  display: block;
+  flex-basis: 0;
+  flex-grow: 1;
+  flex-shrink: 1;
+  padding: ($padding-y / 2) ($padding-x / 2);
+  .col {
+    padding: ($padding-y) ($padding-x);
+  }
+}
+
+@mixin column-is ($n) {
+  flex: none;
+  width: ($n / $col-count) * 99.9%;
+}
+
+@mixin is-offset ($n) {
+  margin-left: ($n / $col-count) * 100%
+}
+@mixin is-offset-right ($n) {
+  margin-right: ($n / $col-count) * 100%
+}
+@mixin float ($dir) {
+  float: $dir;
+}
+@mixin flush {
+  padding: 0 !important;
+}
+
+.col { @include column(); }
+
+@for $i from 0 through $col-count {
+  .col-is-#{$i}    { @include column-is($i); }
+  .is-offset-#{$i} { @include is-offset($i); }
+}
+@include not-small ()    {
+  .ns-col-is-left  { @include float(left);  }
+  .ns-col-is-right { @include float(right); }
+  .ns-col-is-flush { @include flush();      }
+  @for $i from 0 through $col-count {
+    .ns-col-is-#{$i}    { @include column-is($i); }
+    .ns-is-offset-#{$i} { @include is-offset($i); }
+  }
+}
+@include medium-break () {
+  .md-col-is-left  { @include float(left);  }
+  .md-col-is-right { @include float(right); }
+  .md-col-is-flush { @include flush(); }
+  @for $i from 0 through $col-count {
+    .md-col-is-#{$i}    { @include column-is($i); }
+    .md-is-offset-#{$i} { @include is-offset($i); }
+  }
+}
+@include large-break ()  {
+  .lg-col-is-left  { @include float(left);  }
+  .lg-col-is-right { @include float(right); }
+  .lg-col-is-flush { @include flush();      }
+  @for $i from 0 through $col-count {
+    .lg-col-is-#{$i}    { @include column-is($i); }
+    .lg-is-offset-#{$i} { @include is-offset($i); }
+  }
+}
+
+.col-is-left  { @include float(left); }
+.col-is-right { @include float(right); }
+.col-is-flush { @include flush(); }

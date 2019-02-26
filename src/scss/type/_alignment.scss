@@ -1,0 +1,42 @@
+@mixin text-inline() {
+  display: inline;
+}
+@mixin text-center() {
+  text-align: center;
+}
+@mixin text-left() {
+  text-align: left;
+}
+@mixin text-right() {
+  text-align: right;
+}
+
+@if $alignment {
+  .txt-inline { @include text-inline(); }
+  .txt-center { @include text-center(); }
+  .txt-left   { @include text-left();   }
+  .txt-right  { @include text-right();  }
+}
+
+@if $alignment-responsive {
+  @include not-small ()  {
+    .ns-txt-inline { @include text-inline(); }
+    .ns-txt-center { @include text-center(); }
+    .ns-txt-left   { @include text-left();   }
+    .ns-txt-right  { @include text-right();  }
+  }
+
+  @include medium-break ()  {
+    .md-txt-inline { @include text-inline(); }
+    .md-txt-center { @include text-center(); }
+    .md-txt-left   { @include text-left();   }
+    .md-txt-right  { @include text-right();  }
+  }
+
+  @include large-break ()  {
+    .lg-txt-inline { @include text-inline(); }
+    .lg-txt-center { @include text-center(); }
+    .lg-txt-left   { @include text-left();   }
+    .lg-txt-right  { @include text-right();  }
+  }
+}

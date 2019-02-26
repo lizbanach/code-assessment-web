@@ -1,0 +1,37 @@
+@mixin font-size($n) {
+  $size: nth($type-sizes, $n);
+  font-size:   ( nth($size, 1) / $base-size ) * 1rem;
+  line-height: ( nth($size, 2) / $base-size ) * 1rem;
+}
+
+@if $font-size {
+  @each $size in $type-sizes {
+    $n: index($type-sizes, $size);
+    $i: $n - 1;
+    .txt-size-#{$i} { @include font-size($n); }
+  }
+}
+
+@if $font-size-responsive {
+  @include not-small ()  {
+    @each $size in $type-sizes {
+      $n: index($type-sizes, $size);
+      $i: $n - 1;
+      .ns-txt-size-#{$i} { @include font-size($n); }
+    }
+  }
+  @include medium-break ()  {
+    @each $size in $type-sizes {
+      $n: index($type-sizes, $size);
+      $i: $n - 1;
+      .md-txt-size-#{$i} { @include font-size($n); }
+    }
+  }
+  @include large-break ()  {
+    @each $size in $type-sizes {
+      $n: index($type-sizes, $size);
+      $i: $n - 1;
+      .lg-txt-size-#{$i} { @include font-size($n); }
+    }
+  }
+}

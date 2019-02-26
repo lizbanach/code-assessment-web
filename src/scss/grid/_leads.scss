@@ -1,0 +1,77 @@
+$half-leading: $leading/2;
+
+@mixin lead-top ($n) {
+  margin-top: $n * $leading;
+}
+@mixin lead-bottom ($n) {
+  margin-bottom: $n * $leading;
+}
+@mixin padding-top ($n) {
+  padding-top: $n * $leading;
+}
+@mixin padding-bottom ($n) {
+  padding-bottom: $n * $leading;
+}
+
+@for $i from 0 through $vertical-range {
+  .lead-#{$i} { @include lead-top($i); }
+}
+@for $i from 0 through $vertical-range {
+  .lead-bottom-#{$i} { @include lead-bottom($i); }
+}
+@for $i from 0 through $vertical-range {
+  .padding-#{$i} { @include padding-top($i); }
+}
+@for $i from 0 through $vertical-range {
+  .padding-bottom-#{$i} { @include padding-bottom($i); }
+}
+
+.lead-half { margin-top: $half-leading; }
+.lead-bottom-half { margin-bottom: $half-leading; }
+.padding-half { padding-top: $half-leading; }
+.padding-bottom-half { padding-bottom: $half-leading; }
+
+@include not-small ()    {
+  @for $i from 0 through $vertical-range {
+    .ns-lead-#{$i} { @include lead-top($i); }
+    .ns-padding-#{$i} { @include padding-top($i); }
+  }
+  @for $i from 0 through $vertical-range {
+    .ns-lead-bottom-#{$i} { @include lead-bottom($i); }
+    .ns-padding-bottom-#{$i} { @include padding-bottom($i); }
+  }
+  .ns-lead-half { margin-top: $half-leading; }
+  .ns-lead-bottom-half { margin-bottom: $half-leading; }
+  .ns-padding-half { padding-top: $half-leading; }
+  .ns-padding-bottom-half { padding-bottom: $half-leading; }
+}
+
+@include medium-break () {
+  @for $i from 0 through $vertical-range {
+    .md-lead-#{$i} { @include lead-top($i); }
+    .md-padding-#{$i} { @include padding-top($i); }
+  }
+  @for $i from 0 through $vertical-range {
+    .md-lead-bottom-#{$i} { @include lead-bottom($i); }
+    .md-padding-bottom-#{$i} { @include padding-bottom($i); }
+  }
+  .md-lead-half { margin-top: $half-leading; }
+  .md-lead-bottom-half { margin-bottom: $half-leading; }
+  .md-padding-half { padding-top: $half-leading; }
+  .md-padding-bottom-half { padding-bottom: $half-leading; }
+}
+
+@include large-break ()  {
+  @for $i from 0 through $vertical-range {
+    .lg-lead-#{$i} { @include lead-top($i); }
+    .lg-padding-#{$i} { @include padding-top($i); }
+  }
+  @for $i from 0 through $vertical-range {
+    .lg-lead-bottom-#{$i} { @include lead-bottom($i); }
+    .lg-padding-bottom-#{$i} { @include padding-bottom($i); }
+  }
+  .lg-lead-half { margin-top: $half-leading; }
+  .lg-lead-bottom-half { margin-bottom: $half-leading; }
+  .lg-padding-half { padding-top: $half-leading; }
+  .lg-padding-bottom-half { padding-bottom: $half-leading; }
+}

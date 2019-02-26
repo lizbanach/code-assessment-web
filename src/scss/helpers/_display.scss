@@ -1,0 +1,29 @@
+/* hide/show all sizes */
+.hide              { display: none; }
+.important-hide    { display: none !important; }
+.show-flex         { display: flex;}
+.show-block        { display: block;}
+.show-inline       { display: inline;}
+.show-inline-block { display: inline-block;}
+
+@include not-small() {
+  .ns-hide              { display: none; }
+  .ns-show-flex         { display: flex;}
+  .ns-show-block        { display: block;}
+  .ns-show-inline       { display: inline;}
+  .ns-show-inline-block { display: inline-block;}
+}
+@include medium-break() {
+  .md-hide              { display: none; }
+  .md-show-flex         { display: flex;}
+  .md-show-block        { display: block;}
+  .md-show-inline       { display: inline;}
+  .md-show-inline-block { display: inline-block;}
+}
+@include large-break() {
+  .lg-hide              { display: none; }
+  .lg-show-flex         { display: flex;}
+  .lg-show-block        { display: block;}
+  .lg-show-inline       { display: inline;}
+  .lg-show-inline-block { display: inline-block;}
+}

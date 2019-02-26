@@ -1,0 +1,23 @@
+@mixin word-spacing($n) {
+  word-spacing: $n * 0.001em;
+}
+
+@if $word-spacing {
+  .txt-spaced-wide  { @include word-spacing($wordspace-wide); }
+  .txt-spaced-tight { @include word-spacing($wordspace-tight); }
+}
+
+@if $word-spacing-responsive {
+  @include not-small ()  {
+    .ns-txt-spaced-wide  { @include word-spacing($wordspace-wide); }
+    .ns-txt-spaced-tight { @include word-spacing($wordspace-tight); }
+  }
+  @include medium-break ()  {
+    .md-txt-spaced-wide  { @include word-spacing($wordspace-wide); }
+    .md-txt-spaced-tight { @include word-spacing($wordspace-tight); }
+  }
+  @include large-break ()  {
+    .lg-txt-spaced-wide  { @include word-spacing($wordspace-wide); }
+    .lg-txt-spaced-tight { @include word-spacing($wordspace-tight); }
+  }
+}

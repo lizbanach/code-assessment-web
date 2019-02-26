@@ -1,0 +1,58 @@
+@mixin baseline-top ($n) {
+  margin-top: $n * $baseline;
+}
+@mixin baseline-bottom ($n) {
+  margin-bottom: $n * $baseline;
+}
+@mixin baseline-padding-top ($n) {
+  padding-top: $n * $baseline;
+}
+@mixin baseline-padding-bottom ($n) {
+  padding-bottom: $n * $baseline;
+}
+
+@for $i from 1 through $vertical-range {
+  .baseline-#{$i} { @include baseline-top($i); }
+}
+@for $i from 1 through $vertical-range {
+  .baseline-bottom-#{$i} { @include baseline-bottom($i); }
+}
+@for $i from 1 through $vertical-range {
+  .baseline-padding-#{$i} { @include baseline-padding-top($i); }
+}
+@for $i from 1 through $vertical-range {
+  .baseline-padding-bottom-#{$i} { @include baseline-padding-bottom($i); }
+}
+
+@include not-small ()    {
+  @for $i from 1 through $vertical-range {
+    .ns-baseline-#{$i} { @include baseline-top($i); }
+    .ns-baseline-padding-#{$i} { @include baseline-padding-top($i); }
+  }
+  @for $i from 1 through $vertical-range {
+    .ns-baseline-bottom-#{$i} { @include baseline-bottom($i); }
+    .ns-baseline-padding-bottom-#{$i} { @include baseline-padding-bottom($i); }
+  }
+}
+
+@include medium-break () {
+  @for $i from 1 through $vertical-range {
+    .md-baseline-#{$i} { @include baseline-top($i); }
+    .md-baseline-padding-#{$i} { @include baseline-padding-top($i); }
+  }
+  @for $i from 1 through $vertical-range {
+    .md-baseline-bottom-#{$i} { @include baseline-bottom($i); }
+    .md-baseline-padding-bottom-#{$i} { @include baseline-padding-bottom($i); }
+  }
+}
+
+@include large-break ()  {
+  @for $i from 1 through $vertical-range {
+    .lg-baseline-#{$i} { @include baseline-top($i); }
+    .lg-baseline-padding-#{$i} { @include baseline-padding-top($i); }
+  }
+  @for $i from 1 through $vertical-range {
+    .lg-baseline-bottom-#{$i} { @include baseline-bottom($i); }
+    .lg-baseline-padding-bottom-#{$i} { @include baseline-padding-bottom($i); }
+  }
+}

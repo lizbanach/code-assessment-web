@@ -1,0 +1,15 @@
+// ┌─────────────┐
+// │ Backgrounds │
+// └─────────────┘
+@mixin bg-light-gray {
+  background-color: $light-gray;
+}
+
+.bg-light-gray { @include bg-light-gray(); }
+
+
+// ┌───────┐
+// │ Fills │
+// └───────┘
+
+.fill-black { fill: $black; }

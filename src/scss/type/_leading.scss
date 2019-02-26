@@ -1,0 +1,27 @@
+@mixin leading($n) {
+  line-height: $n * $baseline;
+}
+
+@if $include-leading {
+  @for $i from 1 through 12 {
+    .txt-lead-#{$i} { @include leading($i); }
+  }
+}
+
+@if $leading-responsive {
+  @include not-small ()  {
+    @for $i from 1 through 12 {
+      .ns-txt-lead-#{$i} { @include leading($i); }
+    }
+  }
+  @include medium-break ()  {
+   @for $i from 1 through 12 {
+      .md-txt-lead-#{$i} { @include leading($i); }
+    }
+  }
+  @include large-break ()  {
+    @for $i from 1 through 12 {
+      .lg-txt-lead-#{$i} { @include leading($i); }
+    }
+  }
+}

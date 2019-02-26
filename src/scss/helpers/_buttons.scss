@@ -1,0 +1,44 @@
+@mixin btn () {
+  border-radius: $border-radius;
+  text-decoration: none;
+  text-align: center;
+  padding: ($baseline*5) ($baseline*8);
+  cursor: pointer;
+  box-sizing: border-box;
+  white-space: nowrap;
+  transition: all $slow;
+  box-shadow: none;
+  text-shadow: none;
+  background: transparent;
+  border: $border-px solid $black;
+}
+
+.btn { @include btn(); }
+
+.btn-fill {
+  width: 100%;
+}
+
+.btn-flex {
+  flex: 1;
+}
+
+.btn-disabled {
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+// COLORS
+.btn-black {
+  background-color: $black;
+  border-color: $black;
+  color: $white;
+  // &:visited {
+  //   color: $dark-gray;
+  // }
+  &:hover {
+    background-color: $white;
+    border-color: $black;
+    color: $black;
+  }
+}

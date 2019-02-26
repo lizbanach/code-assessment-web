@@ -1,0 +1,171 @@
+// ┌──────────────────────┐
+// │ Settings & Variables │
+// └──────────────────────┘
+//
+// ┌────────────┐
+// │ STRUCTURAL │
+// └────────────┘
+// ┌───────────────┐
+// │ Scales: Other │
+// └───────────────┘
+$golden:                 1.618;
+
+// ┌────────────┐
+// │ TYPOGRAPHY │
+// └────────────┘
+
+@import url('https://fonts.googleapis.com/css?family=Chivo:300i,400,700');
+
+// ┌────────────┐
+// │ Type:Sizes │
+// └────────────┘
+$base-size:              18;
+$point:                  (1/$base-size);
+$rem-size:               $base-size * 1px;
+$ratio:                  $golden;
+$body-size:              1rem;
+$small-size:             0.85rem;
+$baseline:               0.14285rem;
+$leading:                10*$baseline;
+$indent:                 1em;
+$type-sizes: (
+  (12, 20),  // 0
+  (14, 24),  // 1
+  (16, 24),  // 2
+  (24, 30),  // 3
+  (30, 36),  // 4
+  (36, 40),  // 5
+  (40, 36),  // 6
+  (48, 64),  // 7
+  (60, 70),  // 8
+  (64, 60),  // 9
+  (72, 72)   // 10
+);
+
+// ┌────────────┐
+// │ Type:Faces │
+// └────────────┘
+
+// ┌─────────────┐
+// │ Type:Stacks │
+// └─────────────┘
+$serif: serif;
+$apercu: sans-serif;
+$mono: monospace;
+$chivo: 'Chivo', sans-serif;
+
+// ┌─────────────────────┐
+// │ Type:CSS Generation │
+// └─────────────────────┘
+$include-leading:               true;
+$leading-responsive:      true;
+$tracking:                true;
+$tracking-responsive:          false;
+$word-spacing:                 false;
+$word-spacing-responsive:      false;
+$alignment:               true;
+$alignment-responsive:    true;
+$font-scale:                   false;
+$font-scale-responsive:        false;
+$font-size:               true;
+$font-size-responsive:    true;
+$font-weight:             true;
+  $fw-thin:                    false;
+  $fw-light:              true;
+  $fw-regular:            true;
+  $fw-medium:                  false;
+  $fw-demi:                    false;
+  $fw-bold:               true;
+  $fw-black:                   false;
+$font-weight-responsive:       false;
+$font-style:              true;
+$font-style-responsive:        false;
+
+// ┌──────┐
+// │ GRID │
+// └──────┘
+// ┌──────────────────┐
+// │ Container Widths │
+// └──────────────────┘
+$container-ratio:        11/12;
+$container-ratio-medium: 11/12;
+$container-ratio-large:  11/12;
+$max-width:              60rem;
+
+// ┌───────────────┐
+// │ Grid: Columns │
+// └───────────────┘
+$gutter:                 4.3%;
+$col-count:              12;
+
+// ┌───────────────┐
+// │ Grid: Spacing │
+// └───────────────┘
+$vertical-range: 28;
+$spacing: (
+  padding-x: $gutter,
+  padding-y: $baseline,
+  padding-outer-x: $gutter / 2,
+  padding-outer-y: $baseline
+);
+$padding-x: map-get($spacing, padding-x);
+$padding-y: map-get($spacing, padding-y);
+$padding-outer-x: map-get($spacing, padding-outer-x);
+$padding-outer-y: map-get($spacing, padding-outer-y);
+
+// ┌─────────────────────────┐
+// │ Media Query Breakpoints │
+// └─────────────────────────┘
+$small:                  40rem;
+$medium:                 48rem;
+$large:                  55rem;
+
+// optional to use these
+$nav-small:              570px;
+$nav-medium:             700px;
+$nav-large:              1125px;
+
+// ┌────────┐
+// │ Colors │
+// └────────┘
+$white: rgba(255,255,255,100);
+$off-white: rgba(250,250,250,100);
+$black: rgba(0,0,0,100);
+$off-black: rgba(74,74,74,100);
+$dark-gray: rgba(98,98,98,100);
+$gray: rgba(150,150,150,100);
+$light-gray: rgba(250,250,250,100);
+
+// ┌──────────────┐
+// │ Colors:Brand │
+// └──────────────┘
+$pink: rgba(255,34,102,100);
+
+// ┌──────────────┐
+// │ Colors:Other │
+// └──────────────┘
+$error: rgba(244,66,66,100);
+$success: rgba(50,211,107,100);
+
+// ┌─────────┐
+// │ Borders │
+// └─────────┘
+
+$border-radius: 1px;
+$border-px: 1px;
+$border-black: $border-px solid $black;
+
+// ┌─────────────┐
+// │ Transitions │
+// └─────────────┘
+$slow: 0.4s;
+$regular: 0.25s;
+$fast: 0.175s;
+$link-transition: all $regular linear;
+
+
+// ┌──────────┐
+// │ Tracking │
+// └──────────┘
+$tracking-wide: 100;
+$tracking-tight: 50;

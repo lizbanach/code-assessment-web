@@ -1,0 +1,19 @@
+.skip-link {
+  pointer-events: none;
+  opacity: 0;
+  position: absolute;
+}
+
+.link-transition { transition: $link-transition; }
+
+.fill { width: 100%; }
+
+.no-click { pointer-events: none; }
+
+.is-flush-left { padding-left: 0 !important; }
+.is-flush-right { padding-right: 0 !important; }
+
+@include not-small() {
+  .ns-is-flush-left { padding-left: 0 !important; }
+  .ns-is-flush-right { padding-right: 0 !important; }
+}

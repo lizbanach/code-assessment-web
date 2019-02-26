@@ -1,0 +1,38 @@
+.rte {
+  h1, h2, h3 {
+  }
+  h4, h5, h6 {
+    text-transform: uppercase;
+  }
+
+  h1 {
+    @include font-size(6);
+    @include lead-top(2);
+  }
+
+  h2 {
+    @include font-size(5);
+    @include lead-top(2);
+  }
+
+  h3 {
+    @include font-size(4);
+    @include lead-top(1);
+  }
+
+  h4 {
+    @include font-size(3);
+  }
+  h5 {
+    @include font-size(2);
+  }
+  h6 {
+    @include font-size(1);
+  }
+  ul, ol {
+    padding-left: 10px;
+  }
+  p {
+    @include lead-bottom(1);
+  }
+}

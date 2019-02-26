@@ -1,0 +1,8 @@
+@mixin font-weight($n) {
+  font-weight: $n;
+}
+
+.txt-light   { @include font-weight(300); }
+.txt-regular { @include font-weight(400); }
+.txt-medium  { @include font-weight(500); }
+.txt-bold    { @include font-weight(700); }
