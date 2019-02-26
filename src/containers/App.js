@@ -6,17 +6,16 @@ import CartContainer from './CartContainer'
 const App = () => (
   <Router>
     <div>
-      <ul>
-        <li>
-          <Link to="/">Acme Store</Link>
-        </li>
-        <li>
-          <Link to="/cart">Cart</Link>
-        </li>
-      </ul>
-
-      <hr />
-
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">Acme Store</Link>
+          </li>
+          <li>
+            <Link to="/cart">Cart</Link>
+          </li>
+        </ul>
+      </nav>
       <Route exact path="/" component={Home} />
       <Route path="/cart" component={Cart} />
     </div>
