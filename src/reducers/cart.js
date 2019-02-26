@@ -1,4 +1,4 @@
-import { ADD_TO_CART, CHECKOUT_REQUEST, CHECKOUT_FAILURE, INCREASE_QUANTITY, DECREASE_QUANTITY, REMOVE_FROM_CART} from '../constants/ActionTypes'
+import { ADD_TO_CART, CHECKOUT_REQUEST, CHECKOUT_FAILURE, INCREASE_QUANTITY, DECREASE_QUANTITY, REMOVE_FROM_CART } from '../constants/ActionTypes'
 
 const initialState = {
   addedIds: [],
@@ -36,7 +36,7 @@ const quantityById = (state = initialState.quantityById, action) => {
       }
     case DECREASE_QUANTITY:
       return { ...state,
-        [productId]: (state[action.productId] || 0) - 1
+        [action.productId]: (state[action.productId] || 0) - 1
       }
     default:
       return state
