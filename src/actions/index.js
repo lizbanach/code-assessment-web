@@ -1,12 +1,19 @@
 import shop from '../api/shop'
 import * as types from '../constants/ActionTypes'
 
+const fetchProducts = () => {
+  fetch('http://tech.work.co/shopping-cart/products.json')
+  .then(res => res.json()) // response type
+  .then(data => console.log(data)) // log the data
+}
+
 const receiveProducts = products => ({
   type: types.RECEIVE_PRODUCTS,
   products: products
 })
 
 export const getAllProducts = () => dispatch => {
+  fetchProducts()
   shop.getProducts(products => {
     dispatch(receiveProducts(products))
   })
