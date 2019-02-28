@@ -5,7 +5,7 @@ import { removeFromCart, increaseQuantity, decreaseQuantity } from '../actions'
 import { connect } from 'react-redux'
 import { getCartProducts } from '../reducers'
 
-const Cart  = ({ products, total, onCheckoutClicked, removeFromCart, increaseQuantity, decreaseQuantity }) => {
+const Cart  = ({ isOpen, products, total, onCheckoutClicked, onCloseClicked, removeFromCart, increaseQuantity, decreaseQuantity }) => {
   const hasProducts = products.length > 0
   const nodes = hasProducts ? (
     products.map(product =>
@@ -24,13 +24,16 @@ const Cart  = ({ products, total, onCheckoutClicked, removeFromCart, increaseQua
   )
 
   return (
-    <div>
+    <div className={"cart" + (isOpen ? ' open' : '')}>
       <h3>Your Cart</h3>
       <div>{nodes}</div>
       <p>Total: &#36;{total}</p>
       <button onClick={onCheckoutClicked}
         disabled={hasProducts ? '' : 'disabled'}>
         Checkout
+      </button>
+      <button onClick={onCloseClicked}>
+        close cart
       </button>
     </div>
   )
@@ -40,6 +43,7 @@ Cart.propTypes = {
   products: PropTypes.array,
   total: PropTypes.string,
   onCheckoutClicked: PropTypes.func,
+  onCloseClicked: PropTypes.func,
   removeFromCart: PropTypes.func,
   increaseQuantity: PropTypes.func,
   decreaseQuantity: PropTypes.func

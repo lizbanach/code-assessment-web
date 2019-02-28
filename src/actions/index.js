@@ -19,7 +19,7 @@ const receiveProducts = json => ({
   receivedAt: Date.now()
 })
 
-export const getAllProducts = () => (dispatch, getState) => {
+export const getAllProducts = () => (dispatch) => {
   dispatch(fetchProducts())
 }
 
@@ -68,10 +68,7 @@ export const removeFromCart = productId => (dispatch, getState) => {
 }
 
 export const checkout = products => (dispatch, getState) => {
-  const {
-    cart
-  } = getState()
-
+  const { cart } = getState()
   dispatch({
     type: types.CHECKOUT_REQUEST
   })
@@ -83,4 +80,22 @@ export const checkout = products => (dispatch, getState) => {
     // Replace the line above with line below to rollback on failure:
     // dispatch({ type: types.CHECKOUT_FAILURE, cart })
   })
+}
+
+const openModal = () => ({
+  type: types.OPEN_CART
+})
+
+const closeModal = () => ({
+  type: types.CLOSE_CART
+})
+
+export const openCart = () => (dispatch, getState) => {
+  dispatch(openModal())
+  console.log(getState().cart)
+}
+
+export const closeCart = () => (dispatch, getState) => {
+  dispatch(closeModal())
+  console.log(getState().cart)
 }

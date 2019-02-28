@@ -1,8 +1,9 @@
-import { ADD_TO_CART, CHECKOUT_REQUEST, CHECKOUT_FAILURE, INCREASE_QUANTITY, DECREASE_QUANTITY, REMOVE_FROM_CART } from '../constants/ActionTypes'
+import { OPEN_CART, CLOSE_CART, ADD_TO_CART, CHECKOUT_REQUEST, CHECKOUT_FAILURE, INCREASE_QUANTITY, DECREASE_QUANTITY, REMOVE_FROM_CART } from '../constants/ActionTypes'
 
 const initialState = {
   addedIds: [],
-  quantityById: {}
+  quantityById: {},
+  isOpen: false
 }
 
 const addedIds = (state = initialState.addedIds, action) => {
@@ -14,6 +15,17 @@ const addedIds = (state = initialState.addedIds, action) => {
       return [ ...state, action.productId ]
     case REMOVE_FROM_CART:
       return state.filter(id => id !== action.productId)
+    default:
+      return state
+  }
+}
+
+const toggleCart = (state, action) => {
+  switch (action.type) {
+    case OPEN_CART:
+      return true
+    case CLOSE_CART:
+      return false
     default:
       return state
   }
@@ -57,7 +69,8 @@ const cart = (state = initialState, action) => {
     default:
       return {
         addedIds: addedIds(state.addedIds, action),
-        quantityById: quantityById(state.quantityById, action)
+        quantityById: quantityById(state.quantityById, action),
+        isOpen: toggleCart(state.isOpen, action)
       }
   }
 }

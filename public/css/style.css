@@ -3660,3 +3660,8 @@ ul {
   font-weight: bold; }
   .site-logo a {
     text-decoration: none; }
+
+.cart {
+  display: none; }
+  .cart.open {
+    display: block; }

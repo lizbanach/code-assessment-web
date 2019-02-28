@@ -1,0 +1,6 @@
+.cart {
+  display: none;
+  &.open {
+    display: block;
+  }
+}
