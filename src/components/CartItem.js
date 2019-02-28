@@ -1,30 +1,32 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const CartItem = ({ price, inventory, title, onRemoveClicked, onIncreaseClicked, onDecreaseClicked }) => (
-  <div>
-    <div>{title} - &#36;{price}</div>
-    <button
-      onClick={onRemoveClicked}>
-      Remove
-    </button>
-    <div>
-    <button
-      onClick={onIncreaseClicked}>
-      +
-    </button>
-    <button
-      onClick={onDecreaseClicked}>
-      -
-    </button>
-    </div>
-  </div>
+const CartItem = ({ productTitle, price, onAddToCartClicked, onRemoveClicked, onIncreaseClicked, onDecreaseClicked }) => (
+  <div className="col col-is-12 col-is-flush lead-1">
+<div>{productTitle} - &#36;{price}</div>
+          <button
+            onClick={onRemoveClicked}>
+            Remove
+          </button>
+          <div>
+          <button
+            onClick={onIncreaseClicked}>
+            +
+          </button>
+          <button
+            onClick={onDecreaseClicked}>
+            -
+          </button>
+          </div>
+        </div>
 )
 
 CartItem.propTypes = {
-  price: PropTypes.number,
-  inventory: PropTypes.number,
-  title: PropTypes.string,
+  productTitle: PropTypes.string.isRequired,
+  inventory: PropTypes.number.isRequired,
+  price: PropTypes.shape({
+    value: PropTypes.number.isRequired,
+  }).isRequired,
   onRemoveClicked: PropTypes.func,
   onIncreaseClicked: PropTypes.func,
   onDecreaseClicked: PropTypes.func

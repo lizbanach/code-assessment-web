@@ -18,7 +18,8 @@ npm start
 - [X] Remove item
 - [X] Increase item quantity
 - [X] Decrease item quantity
+- [ ] Cart pop-up
 
 ### 3. [Hook Up Product API](/tasks/03-product-api.md)
 
-- [ ] Replace static product API with fetched data from [products endpoint](http://tech.work.co/shopping-cart/products.json)
+- [X] Replace static product API with fetched data from [products endpoint](http://tech.work.co/shopping-cart/products.json)

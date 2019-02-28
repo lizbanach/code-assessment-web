@@ -1,21 +1,26 @@
+import fetch from 'cross-fetch'
 import shop from '../api/shop'
 import * as types from '../constants/ActionTypes'
 
-// const fetchProducts = () => {
-//   fetch('http://tech.work.co/shopping-cart/products.json')
-//     .then(res => res.json()) // response type
-//     .then(data => console.log(data)) // log the data
-// }
+const fetchProducts = () => dispatch => {
+  return fetch('http://tech.work.co/shopping-cart/products.json')
+    .then(response => {
+      if (response.ok) {
+        return response.json()
+      }
+      return response.error
+    })
+    .then(json => dispatch(receiveProducts(json)))
+}
 
-const receiveProducts = products => ({
+const receiveProducts = json => ({
   type: types.RECEIVE_PRODUCTS,
-  products: products
+  products: json,
+  receivedAt: Date.now()
 })
 
-export const getAllProducts = () => dispatch => {
-  shop.getProducts(products => {
-    dispatch(receiveProducts(products))
-  })
+export const getAllProducts = () => (dispatch, getState) => {
+  dispatch(fetchProducts())
 }
 
 const increaseItem = (productId) => ({

@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "devDependencies": {
+    "cross-fetch": "^3.0.1",
     "enzyme": "^2.8.2",
     "node-sass": "^4.11.0",
     "parallelshell": "^3.0.2",

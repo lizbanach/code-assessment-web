@@ -10,8 +10,8 @@ const Cart  = ({ products, total, onCheckoutClicked, removeFromCart, increaseQua
   const nodes = hasProducts ? (
     products.map(product =>
       <CartItem
-        title={product.title}
-        price={product.price}
+        productTitle={product.productTitle}
+        price={product.price.value}
         quantity={product.quantity}
         key={product.id}
         onRemoveClicked={() => removeFromCart(product.id)}
