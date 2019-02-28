@@ -7,7 +7,7 @@ import ProductItem from '../components/ProductItem'
 import ProductsList from '../components/ProductsList'
 import Header from '../components/Header'
 
-const ProductsContainer = ({ cart, products, addToCart, openCart, closeCart }) => {
+const ProductsContainer = ({ cart, products, addToCart, openCart }) => {
   return (
     <main>
       <Header

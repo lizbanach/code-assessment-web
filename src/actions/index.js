@@ -90,12 +90,10 @@ const closeModal = () => ({
   type: types.CLOSE_CART
 })
 
-export const openCart = () => (dispatch, getState) => {
+export const openCart = () => (dispatch) => {
   dispatch(openModal())
-  console.log(getState().cart)
 }
 
-export const closeCart = () => (dispatch, getState) => {
+export const closeCart = () => (dispatch) => {
   dispatch(closeModal())
-  console.log(getState().cart)
 }
