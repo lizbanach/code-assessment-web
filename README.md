@@ -18,7 +18,7 @@ npm start
 - [X] Remove item
 - [X] Increase item quantity
 - [X] Decrease item quantity
-- [ ] Cart pop-up
+- [X] Cart toggle
 
 ### 3. [Hook Up Product API](/tasks/03-product-api.md)
 
