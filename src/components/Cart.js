@@ -16,7 +16,7 @@ const Cart  = ({ products, total, onCheckoutClicked, removeFromCart, increaseQua
         key={product.id}
         onRemoveClicked={() => removeFromCart(product.id)}
         onIncreaseClicked={() => increaseQuantity(product.id)}
-        onDecreasedClicked={() => decreaseQuantity(product.id)}
+        onDecreaseClicked={() => decreaseQuantity(product.id)}
       />
     )
   ) : (
