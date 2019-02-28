@@ -1,10 +1,3 @@
-/* settings to avoid fonts appearing too bold */
-body {
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-/* END settings to avoid bold fonts */
-
 // ┌───────────┐
 // │ Typefaces │
 // └───────────┘
@@ -18,26 +11,23 @@ body {
 // └───────┘
 @mixin txt-black () {color: $black}
 @mixin txt-white () {color: $white}
-@mixin txt-dark-gray () {color: $dark-gray}
-@mixin txt-gray () {color: $gray}
-@mixin txt-light-gray () {color: $light-gray}
 
 .txt-black {@include txt-black();}
 .txt-white {@include txt-white();}
-.txt-dark-gray {@include txt-dark-gray();}
-.txt-gray {@include txt-gray();}
-.txt-light-gray {@include txt-light-gray();}
 
 // ┌─────────────┐
 // │ Base Styles │
 // └─────────────┘
 html {
+  background: $off-white;
   font-size: $base-size * 1px;
   padding-bottom: 0 !important;
 }
 body {
   font-size: $base-size * 1px;
   @include chivo();
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -82,17 +72,6 @@ img {
 figure {
   margin: 0;
 }
-
-
-// ┌──────────┐
-// │ Tracking │
-// └──────────┘
-
-.txt-track-0 {@include tracking(-123);}
-.txt-track-1 {@include tracking(-45);}
-.txt-track-2 {@include tracking(-7);}
-.txt-track-3 {@include tracking(-30);}
-
 
 // ┌───────┐
 // │ Links │

@@ -1,5 +1,5 @@
 @mixin not-small {
-  @media ( min-width: $small ) {
+  @media (min-width: $small) {
     @content;
   }
 }

@@ -18,15 +18,11 @@
 // │ Type │
 // └──────┘
 @import "type/alignment";
-@import "type/font-style";
 @import "type/font-weight";
 @import "type/leading";
 @import "type/scale";
 @import "type/size";
-@import "type/tracking";
 @import "type/typesetting";
-@import "type/word-spacing";
-@import "type/rich-text-editor";
 
 // ┌─────────┐
 // │ Helpers │
@@ -35,9 +31,6 @@
 @import "helpers/colors";
 @import "helpers/display";
 @import "helpers/flex";
-@import "helpers/forms";
-@import "helpers/icons";
-@import "helpers/misc-helpers";
 
 // ┌──────────┐
 // │ Sections │

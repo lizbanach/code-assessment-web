@@ -26,14 +26,8 @@ body {
  * 1. Add the correct display in Edge, IE, and Firefox.
  * 2. Add the correct display in IE.
  */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-main,
+article, aside, details,
+figcaption, figure, footer, header, main,
 menu,
 nav,
 section,
@@ -250,8 +244,7 @@ select {
  *    controls in Android 4.
  * 2. Correct the inability to style clickable types in iOS and Safari.
  */
-button,
-html [type="button"],
+button, html [type="button"],
 [type="reset"],
 [type="submit"] {
   -webkit-appearance: button;
@@ -260,20 +253,20 @@ html [type="button"],
 /**
  * Remove the inner border and padding in Firefox.
  */
-button::-moz-focus-inner,
 [type="button"]::-moz-focus-inner,
 [type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
+[type="submit"]::-moz-focus-inner,
+button::-moz-focus-inner {
   border-style: none;
   padding: 0; }
 
 /**
  * Restore the focus styles unset by the previous rule.
  */
-button:-moz-focusring,
 [type="button"]:-moz-focusring,
 [type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring {
+[type="submit"]:-moz-focusring,
+button:-moz-focusring {
   outline: 1px dotted ButtonText; }
 
 /**
@@ -2926,12 +2919,6 @@ textarea {
   .lg-txt-right {
     text-align: right; } }
 
-.txt-roman {
-  font-style: normal; }
-
-.txt-italic {
-  font-style: italic; }
-
 .txt-light {
   font-weight: 300; }
 
@@ -3207,18 +3194,6 @@ textarea {
     font-size: 4rem;
     line-height: 4rem; } }
 
-.txt-tracked-wide {
-  letter-spacing: 0.1em; }
-
-.txt-tracked-tight {
-  letter-spacing: 0.05em; }
-
-/* settings to avoid fonts appearing too bold */
-body {
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased; }
-
-/* END settings to avoid bold fonts */
 .txt-chivo {
   font-family: "Chivo", sans-serif; }
 
@@ -3228,22 +3203,16 @@ body {
 .txt-white {
   color: white; }
 
-.txt-dark-gray {
-  color: #626262; }
-
-.txt-gray {
-  color: #969696; }
-
-.txt-light-gray {
-  color: #fafafa; }
-
 html {
+  background: whitesmoke;
   font-size: 18px;
   padding-bottom: 0 !important; }
 
 body {
   font-size: 18px;
-  font-family: "Chivo", sans-serif; }
+  font-family: "Chivo", sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased; }
 
 h1, h2, h3, h4, h5, h6, p {
   font-weight: 400;
@@ -3268,18 +3237,6 @@ img {
 figure {
   margin: 0; }
 
-.txt-track-0 {
-  letter-spacing: -0.123em; }
-
-.txt-track-1 {
-  letter-spacing: -0.045em; }
-
-.txt-track-2 {
-  letter-spacing: -0.007em; }
-
-.txt-track-3 {
-  letter-spacing: -0.03em; }
-
 .txt-uppercase {
   text-transform: uppercase; }
 
@@ -3301,44 +3258,7 @@ a.txt-hover-underline {
 a.txt-hover-underline:hover {
     text-decoration: underline; }
 
-.rte h4, .rte h5, .rte h6 {
-  text-transform: uppercase; }
-
-.rte h1 {
-  font-size: 2rem;
-  line-height: 2.22222rem;
-  margin-top: 2.857rem; }
-
-.rte h2 {
-  font-size: 1.66667rem;
-  line-height: 2rem;
-  margin-top: 2.857rem; }
-
-.rte h3 {
-  font-size: 1.33333rem;
-  line-height: 1.66667rem;
-  margin-top: 1.4285rem; }
-
-.rte h4 {
-  font-size: 0.88889rem;
-  line-height: 1.33333rem; }
-
-.rte h5 {
-  font-size: 0.77778rem;
-  line-height: 1.33333rem; }
-
-.rte h6 {
-  font-size: 0.66667rem;
-  line-height: 1.11111rem; }
-
-.rte ul, .rte ol {
-  padding-left: 10px; }
-
-.rte p {
-  margin-bottom: 1.4285rem; }
-
 .btn {
-  border-radius: 1px;
   text-decoration: none;
   text-align: center;
   padding: 0.71425rem 1.1428rem;
@@ -3369,9 +3289,6 @@ a.txt-hover-underline:hover {
     background-color: white;
     border-color: black;
     color: black; }
-
-.bg-light-gray {
-  background-color: #fafafa; }
 
 .fill-black {
   fill: black; }
@@ -3533,133 +3450,10 @@ a.txt-hover-underline:hover {
   .ns-flex-direction-row {
     flex-direction: row; } }
 
-::placeholder {
-  color: #969696; }
-
-.form select,
-.form input:not([type=submit]) {
-  background-color: #fafafa;
-  display: block;
-  padding: 0.42855rem 0.8571rem;
-  margin: 1.4285rem 0;
-  border: none;
-  box-sizing: border-box;
-  border-radius: 0;
-  letter-spacing: 0.05em; }
-
-select {
-  -webkit-appearance: initial;
-  color: black;
-  background-color: #969696;
-  border: 1px solid #969696;
-  border-radius: 1px;
-  padding: 0.42855rem 0.8571rem; }
-
-.form.disabled {
-  opacity: 0.4; }
-
-.checkbox {
-  display: inline-block;
-  width: auto;
-  margin-right: 0.33em; }
-  .checkbox input {
-    -webkit-appearance: checkbox;
-    margin-top: 0;
-    margin-bottom: 0; }
-
-.error-msg {
-  opacity: 0;
-  color: #f44242;
-  margin-bottom: 50px; }
-
-.form-error input,
-.form-error textarea {
-  border-color: #f44242; }
-
-.form-error .error-msg {
-  opacity: 1; }
-
-.form-row {
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  box-sizing: border-box;
-  align-items: flex-start;
-  display: flex;
-  padding: 0 0; }
-  .form-row .form-half {
-    box-sizing: border-box;
-    display: block;
-    flex-basis: 0;
-    flex-grow: 1;
-    flex-shrink: 1;
-    padding: 0.07143rem 2.15%;
-    flex: none;
-    width: 49.95%; }
-    .form-row .form-half .col {
-      padding: 0.14285rem 4.3%; }
-    .form-row .form-half select,
-    .form-row .form-half input {
-      width: 100%;
-      box-sizing: border-box; }
-
-.icon {
-  pointer-events: none;
-  width: 1em;
-  height: 1em; }
-
-.skip-link {
-  pointer-events: none;
-  opacity: 0;
-  position: absolute; }
-
-.link-transition {
-  transition: all 0.25s linear; }
-
-.fill {
-  width: 100%; }
-
-.no-click {
-  pointer-events: none; }
-
-.is-flush-left {
-  padding-left: 0 !important; }
-
-.is-flush-right {
-  padding-right: 0 !important; }
-
-@media (min-width: 40rem) {
-  .ns-is-flush-left {
-    padding-left: 0 !important; }
-  .ns-is-flush-right {
-    padding-right: 0 !important; } }
-
-nav {
-  position: relative;
+.navigation {
   width: 100%;
-  height: 80px;
-  line-height: 80px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid #969696; }
-
-ul {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-  max-height: none; }
-  ul li {
-    list-style-type: none;
-    display: inline-block;
-    text-align: center; }
-    ul li a {
-      display: block;
-      text-decoration: none; }
-
-.site-logo {
-  font-weight: bold; }
-  .site-logo a {
-    text-decoration: none; }
+  border-bottom: 1px solid black;
+  padding: 2em 0; }
 
 .cart {
   display: none; }

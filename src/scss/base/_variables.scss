@@ -1,14 +1,6 @@
 // ┌──────────────────────┐
 // │ Settings & Variables │
 // └──────────────────────┘
-//
-// ┌────────────┐
-// │ STRUCTURAL │
-// └────────────┘
-// ┌───────────────┐
-// │ Scales: Other │
-// └───────────────┘
-$golden:                 1.618;
 
 // ┌────────────┐
 // │ TYPOGRAPHY │
@@ -19,6 +11,7 @@ $golden:                 1.618;
 // ┌────────────┐
 // │ Type:Sizes │
 // └────────────┘
+$golden:                 1.618;
 $base-size:              18;
 $point:                  (1/$base-size);
 $rem-size:               $base-size * 1px;
@@ -41,10 +34,6 @@ $type-sizes: (
   (64, 60),  // 9
   (72, 72)   // 10
 );
-
-// ┌────────────┐
-// │ Type:Faces │
-// └────────────┘
 
 // ┌─────────────┐
 // │ Type:Stacks │
@@ -120,40 +109,12 @@ $small:                  40rem;
 $medium:                 48rem;
 $large:                  55rem;
 
-// optional to use these
-$nav-small:              570px;
-$nav-medium:             700px;
-$nav-large:              1125px;
-
 // ┌────────┐
 // │ Colors │
 // └────────┘
 $white: rgba(255,255,255,100);
-$off-white: rgba(250,250,250,100);
+$off-white: rgba(245, 245, 245, 100);
 $black: rgba(0,0,0,100);
-$off-black: rgba(74,74,74,100);
-$dark-gray: rgba(98,98,98,100);
-$gray: rgba(150,150,150,100);
-$light-gray: rgba(250,250,250,100);
-
-// ┌──────────────┐
-// │ Colors:Brand │
-// └──────────────┘
-$pink: rgba(255,34,102,100);
-
-// ┌──────────────┐
-// │ Colors:Other │
-// └──────────────┘
-$error: rgba(244,66,66,100);
-$success: rgba(50,211,107,100);
-
-// ┌─────────┐
-// │ Borders │
-// └─────────┘
-
-$border-radius: 1px;
-$border-px: 1px;
-$border-black: $border-px solid $black;
 
 // ┌─────────────┐
 // │ Transitions │
@@ -162,10 +123,3 @@ $slow: 0.4s;
 $regular: 0.25s;
 $fast: 0.175s;
 $link-transition: all $regular linear;
-
-
-// ┌──────────┐
-// │ Tracking │
-// └──────────┘
-$tracking-wide: 100;
-$tracking-tight: 50;
