@@ -17,7 +17,7 @@ npm start
 
 - [X] Remove item
 - [X] Increase item quantity
-- [ ] Decrease item quantity
+- [X] Decrease item quantity
 
 ### 3. [Hook Up Product API](/tasks/03-product-api.md)
 
