@@ -1,21 +1,22 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import SVG from 'react-inlinesvg';
+import { getCartProducts } from '../reducers'
+import { connect } from 'react-redux'
 
-const Header = ({ quantity, onOpenCartClicked, title }) => {
-  const cartStatus = quantity > 0 ? quantity : 'Your cart is empty'
+const Header = ({ products, onOpenCartClicked, title }) => {
   return (
     <div className="navigation">
       <div className="row">
-        <div className="col col-is-10">
+        <div className="col col-is-9">
           <h1 className="txt-bold">{title}</h1>
         </div>
-        <div className="col col-is-2">
+        <div className="col col-is-3">
           <button
-            className="btn"
+            className="btn btn-cart"
             onClick={onOpenCartClicked}>
             <SVG src="svg/cart.svg"/>
-            {cartStatus}
+            Cart
           </button>
         </div>
       </div>
@@ -24,9 +25,16 @@ const Header = ({ quantity, onOpenCartClicked, title }) => {
 }
 
 Header.propTypes = {
-  quantity: PropTypes.number.isRequired,
+  products: PropTypes.array,
   title: PropTypes.string.isRequired,
   onOpenCartClicked: PropTypes.func.isRequired
 }
 
-export default Header
+const mapStateToProps = (state) => ({
+  products: getCartProducts(state)
+})
+
+export default connect(
+  mapStateToProps,
+  { getCartProducts }
+)(Header)

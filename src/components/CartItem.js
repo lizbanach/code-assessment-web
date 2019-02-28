@@ -3,27 +3,26 @@ import PropTypes from 'prop-types'
 
 const CartItem = ({ productTitle, price, onAddToCartClicked, onRemoveClicked, onIncreaseClicked, onDecreaseClicked }) => (
   <div className="col col-is-12 col-is-flush lead-1">
-<div>{productTitle} - &#36;{price}</div>
-          <button
-            onClick={onRemoveClicked}>
-            Remove
-          </button>
-          <div>
-          <button
-            onClick={onIncreaseClicked}>
-            +
-          </button>
-          <button
-            onClick={onDecreaseClicked}>
-            -
-          </button>
-          </div>
-        </div>
+    <div>{productTitle} - &#36;{price}</div>
+      <button
+        onClick={onRemoveClicked}>
+        Remove
+      </button>
+    <div>
+      <button
+        onClick={onIncreaseClicked}>
+        +
+      </button>
+      <button
+        onClick={onDecreaseClicked}>
+          -
+      </button>
+    </div>
+  </div>
 )
 
 CartItem.propTypes = {
   productTitle: PropTypes.string.isRequired,
-  inventory: PropTypes.number.isRequired,
   price: PropTypes.shape({
     value: PropTypes.number.isRequired,
   }).isRequired,

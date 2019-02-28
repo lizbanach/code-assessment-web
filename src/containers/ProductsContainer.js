@@ -3,12 +3,11 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { addToCart, openCart } from '../actions'
 import { getVisibleProducts } from '../reducers/products'
-import { getCartQuantity } from '../reducers'
 import ProductItem from '../components/ProductItem'
 import ProductsList from '../components/ProductsList'
 import Header from '../components/Header'
 
-const ProductsContainer = ({ cart, products, addToCart, openCart }) => {
+const ProductsContainer = ({ cart, getCartQuantity, products, addToCart, openCart }) => {
   return (
     <main>
       <Header
@@ -39,12 +38,10 @@ ProductsContainer.propTypes = {
     })
   })).isRequired,
   addToCart: PropTypes.func.isRequired,
-  openCart: PropTypes.func.isRequired,
-  quantity: PropTypes.number.isRequired
+  openCart: PropTypes.func.isRequired
 }
 
 const mapStateToProps = state => ({
-  quantity: getCartQuantity(state),
   products: getVisibleProducts(state.products),
   cart: state.cart
 })

@@ -10,12 +10,30 @@
   text-shadow: none;
   background: transparent;
   border: transparent;
+
   &:focus {
     outline: none;
   }
+
+  &:hover {
+    color: $dark-blue;
+  }
 }
 
-.btn { @include btn(); }
+.btn-cart {
+  &:hover {
+    svg {
+      g {
+        transition: all $slow;
+        fill: $dark-blue;
+      }
+    }
+  }
+}
+
+.btn {
+  @include btn();
+}
 
 .btn-fill {
   width: 100%;
@@ -25,20 +43,33 @@
   flex: 1;
 }
 
-.btn-disabled {
+button:disabled,
+button[disabled] {
   pointer-events: none;
-  opacity: 0.8;
+  opacity: 0.3;
 }
-
 // colors
 
 .btn-black {
   background-color: $black;
   border-color: $black;
   color: $white;
+
   &:hover {
     background-color: $white;
     border-color: $black;
     color: $black;
+  }
+}
+
+.btn-blue {
+  background-color: $blue;
+  border-color: $blue;
+  color: $white;
+
+  &:hover {
+    background-color: $dark-blue;
+    border-color: $dark-blue;
+    color: $white;
   }
 }
