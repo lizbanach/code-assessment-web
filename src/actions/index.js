@@ -34,8 +34,10 @@ const decreaseItem = (productId) => ({
   productId
 })
 
-export const decreaseQuantity = productId => (dispatch) => {
-  dispatch(decreaseItem(productId))
+export const decreaseQuantity = productId => (dispatch, getState) => {
+  if (getState().cart.quantityById[productId] > 0) {
+    dispatch(decreaseItem(productId))
+  }
 }
 
 const addItem = productId => ({
