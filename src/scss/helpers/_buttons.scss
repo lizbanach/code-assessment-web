@@ -9,7 +9,10 @@
   box-shadow: none;
   text-shadow: none;
   background: transparent;
-  border: 1px solid $black;
+  border: transparent;
+  &:focus {
+    outline: none;
+  }
 }
 
 .btn { @include btn(); }

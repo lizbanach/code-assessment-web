@@ -3269,7 +3269,9 @@ a.txt-hover-underline:hover {
   box-shadow: none;
   text-shadow: none;
   background: transparent;
-  border: 1px solid black; }
+  border: transparent; }
+  .btn:focus {
+    outline: none; }
 
 .btn-fill {
   width: 100%; }

@@ -24,3 +24,10 @@ export const getCartProducts = state =>
     ...getProduct(state, id),
     quantity: getQuantity(state, id)
   }))
+
+  export const getCartQuantity = state =>
+    getAddedIds(state)
+    .reduce((totalQuantity, id) =>
+      totalQuantity + getQuantity(state, id),
+      0
+    )
