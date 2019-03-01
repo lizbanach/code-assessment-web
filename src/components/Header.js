@@ -18,7 +18,7 @@ const Header = ({ products, onOpenCartClicked, title }) => {
   return (
     <div className="navigation">
       <div className="row">
-        <div className="col col-is-12 lg-col-is-9">
+        <div className="col col-is-12 lg-col-is-9 ns-col-is-flush">
           <h1 className="txt-bold">{title}</h1>
         </div>
         <div className="col col-is-12 ns-col-is-3 lg-txt-right">
