@@ -49,29 +49,3 @@
   box-shadow: 0 2px 4px $black-opacity;
   border-radius: 14px;
 }
-
-.btn-cart {
-  &:hover {
-    svg {
-      g {
-        transition: all $slow;
-        fill: $dark-blue;
-      }
-    }
-  }
-}
-
-.btn-close-cart {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-}
-
-.btn-checkout {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  text-transform: uppercase;
-}

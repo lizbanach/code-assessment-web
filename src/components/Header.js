@@ -8,15 +8,15 @@ const Header = ({ products, onOpenCartClicked, title }) => {
   return (
     <div className="navigation">
       <div className="row">
-        <div className="col col-is-9">
+        <div className="col col-is-12 lg-col-is-9">
           <h1 className="txt-bold">{title}</h1>
         </div>
-        <div className="col col-is-3">
+        <div className="col col-is-12 ns-col-is-3 ns-col-is-flush ns-txt-right">
           <button
             className="btn btn-cart"
             onClick={onOpenCartClicked}>
             <SVG src="svg/cart.svg"/>
-            Cart
+            Your cart is empty
           </button>
         </div>
       </div>

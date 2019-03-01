@@ -1,7 +1,7 @@
 @mixin btn () {
   text-decoration: none;
   text-align: center;
-  padding: ($baseline*5) ($baseline*8);
+  padding: ($baseline*5) ($baseline*10);
   cursor: pointer;
   box-sizing: border-box;
   white-space: nowrap;
@@ -10,6 +10,7 @@
   text-shadow: none;
   background: transparent;
   border: transparent;
+  border-radius: 2rem;
 
   &:focus {
     outline: none;
@@ -61,4 +62,34 @@ button[disabled] {
     border-color: $dark-blue;
     color: $white;
   }
+}
+
+// custom
+
+.btn-cart {
+  padding: ($baseline*5) 0;
+  &:hover {
+    svg {
+      g {
+        transition: all $slow;
+        fill: $dark-blue;
+      }
+    }
+  }
+}
+
+.btn-close-cart {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.btn-checkout {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  text-transform: uppercase;
+  border-radius: 0;
 }
