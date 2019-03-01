@@ -3582,8 +3582,7 @@ button[disabled] {
       border-radius: 0; } }
 
 .cart-heading {
-  padding: 1rem 0;
-  border-bottom: 1px solid #d8d8d8; }
+  padding: 1rem 0; }
 
 .cart-total {
   padding: 1rem 0;
@@ -3603,9 +3602,7 @@ button[disabled] {
 
 .cart-product {
   padding: 1rem 0;
-  border-bottom: 1px solid #d8d8d8; }
-  .cart-product:last-child {
-    border-bottom: none; }
+  border-top: 1px solid #d8d8d8; }
 
 .product {
   padding: 2em 2em 2em 0;

@@ -62,7 +62,7 @@
 
 .cart-heading {
   padding: 1rem 0;
-  border-bottom: 1px solid $light-gray;
+  // border-bottom: 1px solid $light-gray;
 }
 
 .cart-total {
@@ -89,8 +89,5 @@
 
 .cart-product {
   padding: 1rem 0;
-  border-bottom: 1px solid $light-gray;
-  &:last-child {
-    border-bottom: none;
-  }
+  border-top: 1px solid $light-gray;
 }
