@@ -5,6 +5,16 @@ import { getCartProducts } from '../reducers'
 import { connect } from 'react-redux'
 
 const Header = ({ products, onOpenCartClicked, title }) => {
+
+  const hasProducts = products.length > 0
+  var cartTotal = products.reduce(function(prev, cur) {
+    return prev + cur.quantity;
+  }, 0);
+  const cartStatus = hasProducts ? (
+    'Your cart ' + '(' + cartTotal + ' products)'
+  ) : (
+    'Your cart is empty'
+  )
   return (
     <div className="navigation">
       <div className="row">
@@ -16,7 +26,7 @@ const Header = ({ products, onOpenCartClicked, title }) => {
             className="btn btn-cart"
             onClick={onOpenCartClicked}>
             <SVG src="svg/cart.svg"/>
-            Your cart is empty
+            {cartStatus}
           </button>
         </div>
       </div>

@@ -21,7 +21,9 @@ const Cart  = ({ isOpen, products, total, onCheckoutClicked, onCloseClicked, rem
       />
     )
   ) : (
-    <em>Please add some products to cart.</em>
+    <div className="txt-gray">
+      Please add some products to your cart.
+    </div>
   )
 
   return (
@@ -30,9 +32,18 @@ const Cart  = ({ isOpen, products, total, onCheckoutClicked, onCloseClicked, rem
         <button className="btn btn-close-cart" onClick={onCloseClicked}>
           <SVG src="svg/x.svg"/>
         </button>
-        <h1>Your Cart</h1>
-        <div>{nodes}</div>
-        <p>Total: &#36;{total}</p>
+        <div className="cart-heading">
+          <h2 className="txt-bold">Your Cart</h2>
+        </div>
+        <div className="lead-1 cart-product">{nodes}</div>
+        <div className="cart-total row lead-1">
+          <div className="col-is-6">
+            <p className="txt-bold">Total</p>
+          </div>
+          <div className="col-is-6 txt-right txt-light">
+            <p>&#36;{total}</p>
+          </div>
+        </div>
         <button className="btn btn-blue btn-checkout" onClick={onCheckoutClicked}
           disabled={hasProducts ? '' : 'disabled'}>
           Checkout

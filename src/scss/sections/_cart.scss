@@ -41,11 +41,31 @@
   visibility: hidden;
   background-color: $white;
   text-align: left;
-  padding: 4rem 2rem;
+  padding: 2rem;
   transition: transform 0 linear $easing-duration, visibility 0 linear $easing-duration, opacity $easing-duration $easing-function;
   transform: $easing-position;
   width: 75%;
   max-width: $large;
   box-shadow: 0 2px 4px $black-opacity;
   border-radius: 14px;
+  @include smaller-than($medium) {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    max-height: 100vh;
+    height: 100vh;
+    width: 100%;
+    border-radius: 0;
+  }
+}
+
+.cart-heading {
+  padding: 1rem 0;
+  border-bottom: 1px solid $light-gray;
+}
+
+.cart-total {
+  padding: 1rem 0;
+  border-top: 1px solid $light-gray;
 }
