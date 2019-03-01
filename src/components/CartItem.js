@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const CartItem = ({ productTitle, price, onAddToCartClicked, onRemoveClicked, onIncreaseClicked, onDecreaseClicked }) => {
+const CartItem = ({ quantity, productTitle, price, onAddToCartClicked, onRemoveClicked, onIncreaseClicked, onDecreaseClicked }) => {
   const imageTitle = productTitle.toLowerCase()
   const image = '/img/image-' + imageTitle + '.jpg'
   return (
@@ -11,19 +11,26 @@ const CartItem = ({ productTitle, price, onAddToCartClicked, onRemoveClicked, on
       </div>
       <div className="col col-is-8 col-is-flush">
         <p>{productTitle}</p>
-        <p>&#36;{price}</p>
+        <p className="txt-gray txt-size-1">&#36;{price}</p>
+        <p className="txt-size-1">
+          <button className="btn btn-remove"
+            onClick={onRemoveClicked}>
+            Remove
+          </button>
+        </p>
+        <div className="col col-is-12 col-is-flush">
         <button
-          onClick={onRemoveClicked}>
-          Remove
-        </button>
-        <button
+          className="btn btn-blue"
           onClick={onIncreaseClicked}>
           +
         </button>
+        {quantity}
         <button
+          className="btn btn-blue"
           onClick={onDecreaseClicked}>
             -
         </button>
+        </div>
       </div>
     </div>
   )
@@ -31,6 +38,7 @@ const CartItem = ({ productTitle, price, onAddToCartClicked, onRemoveClicked, on
 
 CartItem.propTypes = {
   productTitle: PropTypes.string.isRequired,
+  quantity: PropTypes.number.isRequired,
   price: PropTypes.shape({
     value: PropTypes.number.isRequired,
   }).isRequired,

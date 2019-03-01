@@ -100,3 +100,12 @@ button[disabled] {
   border-radius: 0;
   padding: ($baseline*8) 0;
 }
+
+.btn-remove {
+  padding: $baseline*4 0;
+  color: red;
+  &:hover {
+    color: red;
+    text-decoration: underline;
+  }
+}
