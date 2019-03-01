@@ -63,14 +63,14 @@ button[disabled] {
     color: $white;
   }
 }
-
 // custom
-
 .btn-cart {
   padding: ($baseline*5) 0;
+
   svg {
     max-width: 1rem;
   }
+
   &:hover {
     svg {
       g {
@@ -85,6 +85,7 @@ button[disabled] {
   position: absolute;
   top: 0;
   right: 0;
+
   svg {
     max-width: 20px;
   }
@@ -92,34 +93,66 @@ button[disabled] {
 
 .btn-checkout {
   position: absolute;
-  bottom: 0;
   left: 0;
   right: 0;
+  bottom: 0;
   width: 100%;
   text-transform: uppercase;
   border-radius: 0;
   padding: ($baseline*8) 0;
+  @include smaller-than($medium) {
+    bottom: auto;
+  }
 }
 
 .btn-remove {
   padding: $baseline*4 0;
   color: red;
+
   &:hover {
     color: red;
     text-decoration: underline;
   }
 }
 
-.btn-increase {
+.btn-decrease {
   border-radius: 1em 0 0 1em;
-  background: $off-white;
+  background: $blue-gray;
   width: 30%;
   display: inline-block;
+
+  svg {
+    max-width: 10px;
+    margin-bottom: 4px;
+  }
+
+  &:hover {
+    svg {
+      g {
+        stroke: $white;
+      }
+    }
+    background: $blue;
+  }
 }
 
-.btn-decrease {
+.btn-increase {
   border-radius: 0 1em 1em 0;
-  background: $off-white;
+  background: $blue-gray;
   width: 30%;
   display: inline-block;
+
+  svg {
+    max-width: 10px;
+    margin-top: 8px;
+  }
+
+  &:hover {
+    svg {
+      g {
+        stroke: $white;
+      }
+    }
+    background: $blue;
+  }
 }

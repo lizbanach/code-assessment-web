@@ -1,13 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import SVG from 'react-inlinesvg'
 
 const CartItem = ({ quantity, productTitle, price, onAddToCartClicked, onRemoveClicked, onIncreaseClicked, onDecreaseClicked }) => {
   const imageTitle = productTitle.toLowerCase()
   const image = '/img/image-' + imageTitle + '.jpg'
   return (
     <div>
-      <div className="row">
-        <div className="col col-is-5 col-is-flush">
+
+      <div className="row lead-1">
+        <div className="col col-is-5 col-is-flush txt-center">
           <img className="cart-image" alt={productTitle} src={image} />
         </div>
         <div className="col col-is-7 col-is-flush">
@@ -21,23 +23,25 @@ const CartItem = ({ quantity, productTitle, price, onAddToCartClicked, onRemoveC
           </p>
         </div>
       </div>
+
       <div className="row row-is-centered">
         <div className="col">
           <button
-            className="btn btn-increase"
-            onClick={onIncreaseClicked}>
-            +
+            className="btn btn-decrease"
+            onClick={onDecreaseClicked}>
+            <SVG src="svg/minus.svg"/>
           </button>
           <div className="quantity">
             {quantity}
           </div>
           <button
-            className="btn btn-decrease"
-            onClick={onDecreaseClicked}>
-              -
+            className="btn btn-increase"
+            onClick={onIncreaseClicked}>
+            <SVG src="svg/plus.svg"/>
           </button>
         </div>
       </div>
+
     </div>
   )
 }

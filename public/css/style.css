@@ -3333,13 +3333,16 @@ button[disabled] {
 
 .btn-checkout {
   position: absolute;
-  bottom: 0;
   left: 0;
   right: 0;
+  bottom: 0;
   width: 100%;
   text-transform: uppercase;
   border-radius: 0;
   padding: 1.1428rem 0; }
+  @media (max-width: 48rem) {
+    .btn-checkout {
+      bottom: auto; } }
 
 .btn-remove {
   padding: 0.5714rem 0;
@@ -3348,17 +3351,31 @@ button[disabled] {
     color: red;
     text-decoration: underline; }
 
-.btn-increase {
-  border-radius: 1em 0 0 1em;
-  background: whitesmoke;
-  width: 30%;
-  display: inline-block; }
-
 .btn-decrease {
-  border-radius: 0 1em 1em 0;
-  background: whitesmoke;
+  border-radius: 1em 0 0 1em;
+  background: #f2f4f7;
   width: 30%;
   display: inline-block; }
+  .btn-decrease svg {
+    max-width: 10px;
+    margin-bottom: 4px; }
+  .btn-decrease:hover {
+    background: #5e97d1; }
+    .btn-decrease:hover svg g {
+      stroke: white; }
+
+.btn-increase {
+  border-radius: 0 1em 1em 0;
+  background: #f2f4f7;
+  width: 30%;
+  display: inline-block; }
+  .btn-increase svg {
+    max-width: 10px;
+    margin-top: 8px; }
+  .btn-increase:hover {
+    background: #5e97d1; }
+    .btn-increase:hover svg g {
+      stroke: white; }
 
 .bg-white {
   background: white; }
@@ -3551,38 +3568,35 @@ button[disabled] {
 .cart-content {
   box-sizing: border-box;
   position: relative;
-  top: 10%;
-  max-height: 90vh;
+  top: 2%;
   z-index: 100;
+  max-width: 760px;
+  overflow-y: scroll;
   float: none;
-  overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  display: inline-block;
-  vertical-align: middle;
   opacity: 0;
   visibility: hidden;
   background-color: white;
   text-align: left;
-  padding: 2rem;
+  padding: 1rem;
   transition: transform 0 linear 300ms, visibility 0 linear 300ms, opacity 300ms cubic-bezier(0.215, 0.44, 0.42, 0.88);
   transform: translate3d(0, 20px, 0);
-  width: 75%;
-  max-width: 55rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  border-radius: 14px; }
+  border-radius: 14px;
+  margin: 0 auto; }
   @media (max-width: 48rem) {
     .cart-content {
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
-      max-height: 100vh;
       height: 100vh;
       width: 100%;
       border-radius: 0; } }
 
 .cart-heading {
-  padding: 1rem 0; }
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #d8d8d8; }
 
 .cart-total {
   padding: 1rem 0;
@@ -3598,11 +3612,13 @@ button[disabled] {
 .quantity {
   width: 30%;
   display: inline-block;
-  text-align: center; }
+  text-align: center;
+  height: 1em;
+  line-height: 1em; }
 
-.cart-product {
-  padding: 1rem 0;
-  border-top: 1px solid #d8d8d8; }
+.cart-image {
+  max-height: 125px;
+  width: auto; }
 
 .product {
   padding: 2em 2em 2em 0;

@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import SVG from 'react-inlinesvg';
+import SVG from 'react-inlinesvg'
 import { getCartProducts } from '../reducers'
 import { connect } from 'react-redux'
 

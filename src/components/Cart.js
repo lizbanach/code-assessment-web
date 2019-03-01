@@ -4,7 +4,7 @@ import CartItem from './CartItem'
 import { removeFromCart, increaseQuantity, decreaseQuantity } from '../actions'
 import { connect } from 'react-redux'
 import { getCartProducts } from '../reducers'
-import SVG from 'react-inlinesvg';
+import SVG from 'react-inlinesvg'
 
 const Cart  = ({ isOpen, products, total, onCheckoutClicked, onCloseClicked, removeFromCart, increaseQuantity, decreaseQuantity }) => {
   const hasProducts = products.length > 0
@@ -21,7 +21,7 @@ const Cart  = ({ isOpen, products, total, onCheckoutClicked, onCloseClicked, rem
       />
     )
   ) : (
-    <div className="cart-empty txt-gray txt-center ns-lead-4 ns-lead-bottom-4">
+    <div className="cart-empty txt-gray txt-center lead-3 lead-bottom-3">
       <SVG src="svg/cart.svg"/>
       <div>
       Please add some products to your cart.
@@ -32,25 +32,27 @@ const Cart  = ({ isOpen, products, total, onCheckoutClicked, onCloseClicked, rem
   return (
     <div className={"cart" + (isOpen ? ' open' : '')}>
       <div className="cart-content">
-        <button className="btn btn-close-cart" onClick={onCloseClicked}>
-          <SVG src="svg/x.svg"/>
-        </button>
-        <div className="cart-heading">
-          <h2 className="txt-bold">Your Cart</h2>
-        </div>
-        <div className="lead-1 lead-bottom-1 cart-product">{nodes}</div>
-        <div className="cart-total row lead-1 ns-lead-bottom-4">
-          <div className="col-is-6">
-            <p className="txt-bold">Total</p>
+        <div className="cart-products container">
+          <button className="btn btn-close-cart" onClick={onCloseClicked}>
+            <SVG src="svg/x.svg"/>
+          </button>
+          <div className="cart-heading">
+            <h2 className="txt-bold">Your Cart</h2>
           </div>
-          <div className="col-is-6 txt-right txt-light">
-            <p>&#36;{total}</p>
+          <div>{nodes}</div>
+          <div className="cart-total row lead-1">
+            <div className="col-is-6">
+              <p className="txt-bold">Total</p>
+            </div>
+            <div className="col-is-6 txt-right txt-light">
+              <p>&#36;{total}</p>
+            </div>
           </div>
+          <button className="btn btn-blue btn-checkout" onClick={onCheckoutClicked}
+            disabled={hasProducts ? '' : 'disabled'}>
+            Checkout
+          </button>
         </div>
-        <button className="btn btn-blue btn-checkout" onClick={onCheckoutClicked}
-          disabled={hasProducts ? '' : 'disabled'}>
-          Checkout
-        </button>
       </div>
     </div>
   )

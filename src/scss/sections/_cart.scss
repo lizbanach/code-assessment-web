@@ -29,31 +29,27 @@
 .cart-content {
   box-sizing: border-box;
   position: relative;
-  top: 10%;
-  max-height: 90vh;
+  top: 2%;
   z-index: 100;
+  max-width: 760px;
+  overflow-y: scroll;
   float: none;
-  overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  display: inline-block;
-  vertical-align: middle;
   opacity: 0;
   visibility: hidden;
   background-color: $white;
   text-align: left;
-  padding: 2rem;
+  padding: 1rem;
   transition: transform 0 linear $easing-duration, visibility 0 linear $easing-duration, opacity $easing-duration $easing-function;
   transform: $easing-position;
-  width: 75%;
-  max-width: $large;
   box-shadow: 0 2px 4px $black-opacity;
   border-radius: 14px;
+  margin: 0 auto;
   @include smaller-than($medium) {
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    max-height: 100vh;
     height: 100vh;
     width: 100%;
     border-radius: 0;
@@ -61,8 +57,8 @@
 }
 
 .cart-heading {
-  padding: 1rem 0;
-  // border-bottom: 1px solid $light-gray;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid $light-gray;
 }
 
 .cart-total {
@@ -85,9 +81,11 @@
   width: 30%;
   display: inline-block;
   text-align: center;
+  height: 1em;
+  line-height: 1em;
 }
 
-.cart-product {
-  padding: 1rem 0;
-  border-top: 1px solid $light-gray;
+.cart-image {
+  max-height: 125px;
+  width: auto;
 }
