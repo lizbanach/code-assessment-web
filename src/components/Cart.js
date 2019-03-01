@@ -4,6 +4,7 @@ import CartItem from './CartItem'
 import { removeFromCart, increaseQuantity, decreaseQuantity } from '../actions'
 import { connect } from 'react-redux'
 import { getCartProducts } from '../reducers'
+import SVG from 'react-inlinesvg';
 
 const Cart  = ({ isOpen, products, total, onCheckoutClicked, onCloseClicked, removeFromCart, increaseQuantity, decreaseQuantity }) => {
   const hasProducts = products.length > 0
@@ -25,16 +26,18 @@ const Cart  = ({ isOpen, products, total, onCheckoutClicked, onCloseClicked, rem
 
   return (
     <div className={"cart" + (isOpen ? ' open' : '')}>
-      <h3>Your Cart</h3>
-      <div>{nodes}</div>
-      <p>Total: &#36;{total}</p>
-      <button onClick={onCheckoutClicked}
-        disabled={hasProducts ? '' : 'disabled'}>
-        Checkout
-      </button>
-      <button onClick={onCloseClicked}>
-        close cart
-      </button>
+      <div className="cart-content">
+        <button className="btn btn-close-cart" onClick={onCloseClicked}>
+          <SVG src="svg/x.svg"/>
+        </button>
+        <h1>Your Cart</h1>
+        <div>{nodes}</div>
+        <p>Total: &#36;{total}</p>
+        <button className="btn btn-blue btn-checkout" onClick={onCheckoutClicked}
+          disabled={hasProducts ? '' : 'disabled'}>
+          Checkout
+        </button>
+      </div>
     </div>
   )
 }

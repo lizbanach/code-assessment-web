@@ -20,17 +20,6 @@
   }
 }
 
-.btn-cart {
-  &:hover {
-    svg {
-      g {
-        transition: all $slow;
-        fill: $dark-blue;
-      }
-    }
-  }
-}
-
 .btn {
   @include btn();
 }

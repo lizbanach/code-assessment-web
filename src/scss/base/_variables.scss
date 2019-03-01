@@ -116,6 +116,7 @@ $white: rgba(255,255,255,100);
 $off-white: rgba(245, 245, 245, 100);
 $light-gray: rgba(216, 216, 216, 100);
 $black: rgba(0,0,0,100);
+$black-opacity: rgba(0,0,0,.3);
 $blue: rgba(94, 151, 209, 100);
 $dark-blue: rgba(64, 127, 192, 100);
 
@@ -126,3 +127,6 @@ $slow: 0.4s;
 $regular: 0.25s;
 $fast: 0.175s;
 $link-transition: all $regular linear;
+$easing-function: cubic-bezier(0.215, 0.440, 0.420, 0.880) !default;
+$easing-duration: 300ms !default;
+$easing-position: translate3d(0, 20px, 0) !default;
