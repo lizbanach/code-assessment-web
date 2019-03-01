@@ -109,3 +109,17 @@ button[disabled] {
     text-decoration: underline;
   }
 }
+
+.btn-increase {
+  border-radius: 1em 0 0 1em;
+  background: $off-white;
+  width: 30%;
+  display: inline-block;
+}
+
+.btn-decrease {
+  border-radius: 0 1em 1em 0;
+  background: $off-white;
+  width: 30%;
+  display: inline-block;
+}

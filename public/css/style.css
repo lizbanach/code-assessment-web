@@ -3348,6 +3348,18 @@ button[disabled] {
     color: red;
     text-decoration: underline; }
 
+.btn-increase {
+  border-radius: 1em 0 0 1em;
+  background: whitesmoke;
+  width: 30%;
+  display: inline-block; }
+
+.btn-decrease {
+  border-radius: 0 1em 1em 0;
+  background: whitesmoke;
+  width: 30%;
+  display: inline-block; }
+
 .bg-white {
   background: white; }
 
@@ -3583,6 +3595,17 @@ button[disabled] {
   margin: 1rem auto; }
   .cart-empty svg g {
     fill: #9b9b9b; }
+
+.quantity {
+  width: 30%;
+  display: inline-block;
+  text-align: center; }
+
+.cart-product {
+  padding: 1rem 0;
+  border-bottom: 1px solid #d8d8d8; }
+  .cart-product:last-child {
+    border-bottom: none; }
 
 .product {
   padding: 2em 2em 2em 0;

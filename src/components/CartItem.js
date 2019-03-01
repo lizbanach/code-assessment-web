@@ -5,31 +5,37 @@ const CartItem = ({ quantity, productTitle, price, onAddToCartClicked, onRemoveC
   const imageTitle = productTitle.toLowerCase()
   const image = '/img/image-' + imageTitle + '.jpg'
   return (
+    <div>
       <div className="row">
-      <div className="col col-is-4 col-is-flush">
-        <img className="cart-image" alt={productTitle} src={image} />
+        <div className="col col-is-5 col-is-flush">
+          <img className="cart-image" alt={productTitle} src={image} />
+        </div>
+        <div className="col col-is-7 col-is-flush">
+          <p>{productTitle}</p>
+          <p className="txt-gray txt-size-1">&#36;{price}</p>
+          <p className="txt-size-1">
+            <button className="btn btn-remove"
+              onClick={onRemoveClicked}>
+              Remove
+              </button>
+          </p>
+        </div>
       </div>
-      <div className="col col-is-8 col-is-flush">
-        <p>{productTitle}</p>
-        <p className="txt-gray txt-size-1">&#36;{price}</p>
-        <p className="txt-size-1">
-          <button className="btn btn-remove"
-            onClick={onRemoveClicked}>
-            Remove
+      <div className="row row-is-centered">
+        <div className="col">
+          <button
+            className="btn btn-increase"
+            onClick={onIncreaseClicked}>
+            +
           </button>
-        </p>
-        <div className="col col-is-12 col-is-flush">
-        <button
-          className="btn btn-blue"
-          onClick={onIncreaseClicked}>
-          +
-        </button>
-        {quantity}
-        <button
-          className="btn btn-blue"
-          onClick={onDecreaseClicked}>
-            -
-        </button>
+          <div className="quantity">
+            {quantity}
+          </div>
+          <button
+            className="btn btn-decrease"
+            onClick={onDecreaseClicked}>
+              -
+          </button>
         </div>
       </div>
     </div>

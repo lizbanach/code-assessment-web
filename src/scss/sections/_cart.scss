@@ -80,3 +80,17 @@
     }
   }
 }
+
+.quantity {
+  width: 30%;
+  display: inline-block;
+  text-align: center;
+}
+
+.cart-product {
+  padding: 1rem 0;
+  border-bottom: 1px solid $light-gray;
+  &:last-child {
+    border-bottom: none;
+  }
+}
