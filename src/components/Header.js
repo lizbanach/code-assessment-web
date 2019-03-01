@@ -11,7 +11,7 @@ const Header = ({ products, onOpenCartClicked, title }) => {
     return prev + cur.quantity;
   }, 0);
   const cartStatus = hasProducts ? (
-    'Your cart ' + '(' + cartTotal + ' products)'
+    'Your cart ' + '(' + cartTotal + ')'
   ) : (
     'Your cart is empty'
   )
@@ -21,7 +21,7 @@ const Header = ({ products, onOpenCartClicked, title }) => {
         <div className="col col-is-12 lg-col-is-9">
           <h1 className="txt-bold">{title}</h1>
         </div>
-        <div className="col col-is-12 ns-col-is-3 ns-col-is-flush ns-txt-right">
+        <div className="col col-is-12 ns-col-is-3 lg-txt-right">
           <button
             className="btn btn-cart"
             onClick={onOpenCartClicked}>

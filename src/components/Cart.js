@@ -21,8 +21,11 @@ const Cart  = ({ isOpen, products, total, onCheckoutClicked, onCloseClicked, rem
       />
     )
   ) : (
-    <div className="txt-gray">
+    <div className="cart-empty txt-gray txt-center ns-lead-4 ns-lead-bottom-4">
+      <SVG src="svg/cart.svg"/>
+      <div>
       Please add some products to your cart.
+      </div>
     </div>
   )
 
@@ -35,8 +38,8 @@ const Cart  = ({ isOpen, products, total, onCheckoutClicked, onCloseClicked, rem
         <div className="cart-heading">
           <h2 className="txt-bold">Your Cart</h2>
         </div>
-        <div className="lead-1 cart-product">{nodes}</div>
-        <div className="cart-total row lead-1">
+        <div className="lead-1 lead-bottom-1 cart-product">{nodes}</div>
+        <div className="cart-total row lead-1 ns-lead-bottom-4">
           <div className="col-is-6">
             <p className="txt-bold">Total</p>
           </div>

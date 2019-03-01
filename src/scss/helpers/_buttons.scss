@@ -68,6 +68,9 @@ button[disabled] {
 
 .btn-cart {
   padding: ($baseline*5) 0;
+  svg {
+    max-width: 1rem;
+  }
   &:hover {
     svg {
       g {
@@ -95,4 +98,5 @@ button[disabled] {
   width: 100%;
   text-transform: uppercase;
   border-radius: 0;
+  padding: ($baseline*8) 0;
 }
