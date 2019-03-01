@@ -3529,7 +3529,7 @@ button[disabled] {
 .cart-content {
   box-sizing: border-box;
   position: relative;
-  top: 25%;
+  top: 10%;
   max-height: 90vh;
   z-index: 100;
   float: none;
@@ -3575,6 +3575,9 @@ button[disabled] {
     fill: #9b9b9b; }
 
 .product {
-  padding: 2em;
+  padding: 2em 2em 2em 0;
   background: white;
   border-radius: 5px; }
+
+.product-image {
+  object-fit: cover; }

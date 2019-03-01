@@ -9,15 +9,13 @@ const ProductItem = ({ product, onAddToCartClicked }) => {
       title={product.productTitle}
       price={product.price.value}
       inventory={product.inventory} />
-    <div className="row">
       <div className="col col-is-flush ns-is-offset-4">
         <button
-          className="lead-1 ns-lead-2 btn btn-blue txt-uppercase txt-size-1"
+          className="btn btn-blue txt-uppercase txt-size-1"
           onClick={onAddToCartClicked}
           disabled={product.inventory > 0 ? '' : 'disabled'}>
           {product.inventory > 0 ? 'Add to cart' : 'Sold Out'}
         </button>
-      </div>
     </div>
   </div>
   )

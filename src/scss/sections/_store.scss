@@ -1,5 +1,9 @@
 .product {
-  padding: 2em ;
+  padding: 2em 2em 2em 0;
   background: $white;
   border-radius: 5px;
+}
+
+.product-image {
+  object-fit: cover;
 }
