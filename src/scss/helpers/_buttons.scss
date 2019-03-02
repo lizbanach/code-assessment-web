@@ -95,14 +95,10 @@ button[disabled] {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 0;
   width: 100%;
   text-transform: uppercase;
   border-radius: 0;
   padding: ($baseline*8) 0;
-  @include smaller-than($medium) {
-    bottom: auto;
-  }
 }
 
 .btn-remove {

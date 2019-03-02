@@ -31,7 +31,8 @@
   position: relative;
   top: 2%;
   z-index: 100;
-  max-width: 760px;
+  max-width: 600px;
+  max-height: 96vh;
   overflow-y: scroll;
   float: none;
   -webkit-overflow-scrolling: touch;
@@ -39,7 +40,7 @@
   visibility: hidden;
   background-color: $white;
   text-align: left;
-  padding: 1rem;
+  padding: 1rem 1rem 3.45rem 1rem;
   transition: transform 0 linear $easing-duration, visibility 0 linear $easing-duration, opacity $easing-duration $easing-function;
   transform: $easing-position;
   box-shadow: 0 2px 4px $black-opacity;
@@ -51,6 +52,7 @@
     right: 0;
     bottom: 0;
     height: 100vh;
+    max-height: none;
     width: 100%;
     border-radius: 0;
   }
@@ -62,7 +64,7 @@
 }
 
 .cart-total {
-  padding: 1rem 0;
+  padding: 2rem 0;
   border-top: 1px solid $light-gray;
 }
 
