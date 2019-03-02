@@ -1,22 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Product from './Product'
+import { addToCart } from '../actions'
+import { connect } from 'react-redux'
 
-const ProductItem = ({ product, onAddToCartClicked }) => {
+const ProductItem = ({ product, addToCart }) => {
   return (
-  <div className="product col col-is-12 lead-1">
+  <div className="product col col-is-flush col-is-12 lead-1">
     <Product
       title={product.productTitle}
       price={product.price.value}
-      inventory={product.inventory} />
-      <div className="col lg-col-is-flush lg-is-offset-4 lead-1 lg-lead-0">
-        <button
-          className="btn btn-blue txt-uppercase txt-size-1"
-          onClick={onAddToCartClicked}
-          disabled={product.inventory > 0 ? '' : 'disabled'}>
-          {product.inventory > 0 ? 'Add to cart' : 'Sold Out'}
-        </button>
-    </div>
+      inventory={product.inventory}
+      onAddToCartClicked={() => addToCart(product.id)} />
   </div>
   )
 }
@@ -29,7 +24,14 @@ ProductItem.propTypes = {
       value: PropTypes.number.isRequired,
     })
   }).isRequired,
-  onAddToCartClicked: PropTypes.func.isRequired
+  addToCart: PropTypes.func.isRequired
 }
 
-export default ProductItem
+const mapStateToProps = state => ({
+  cart: state.cart
+})
+
+export default connect(
+  mapStateToProps,
+  { addToCart }
+)(ProductItem)
