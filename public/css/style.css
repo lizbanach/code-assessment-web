@@ -3350,11 +3350,10 @@ button[disabled] {
 .btn-decrease {
   border-radius: 1em 0 0 1em;
   background: #f2f4f7;
-  width: 30%;
+  width: 33%;
   display: inline-block; }
   .btn-decrease svg {
-    max-width: 10px;
-    margin-bottom: 4px; }
+    max-width: 10px; }
   .btn-decrease:hover {
     background: #5e97d1; }
     .btn-decrease:hover svg g {
@@ -3363,11 +3362,10 @@ button[disabled] {
 .btn-increase {
   border-radius: 0 1em 1em 0;
   background: #f2f4f7;
-  width: 30%;
+  width: 33%;
   display: inline-block; }
   .btn-increase svg {
-    max-width: 10px;
-    margin-top: 8px; }
+    max-width: 10px; }
   .btn-increase:hover {
     background: #5e97d1; }
     .btn-increase:hover svg g {
@@ -3608,11 +3606,13 @@ button[disabled] {
     fill: #9b9b9b; }
 
 .quantity {
-  width: 30%;
+  width: 33%;
   display: inline-block;
   text-align: center;
-  height: 1em;
-  line-height: 1em; }
+  line-height: 100%;
+  padding: 0.78568rem 0;
+  border-bottom: 1px solid #f2f4f7;
+  border-top: 1px solid #f2f4f7; }
 
 .cart-image {
   max-height: 100px;

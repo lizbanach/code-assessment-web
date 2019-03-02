@@ -80,11 +80,13 @@
 }
 
 .quantity {
-  width: 30%;
+  width: 33%;
   display: inline-block;
   text-align: center;
-  height: 1em;
-  line-height: 1em;
+  line-height: 100%;
+  padding: ($baseline*5.5) 0;
+  border-bottom: 1px solid $blue-gray;
+  border-top: 1px solid $blue-gray;
 }
 
 .cart-image {
