@@ -9,7 +9,7 @@ const ProductItem = ({ product, onAddToCartClicked }) => {
       title={product.productTitle}
       price={product.price.value}
       inventory={product.inventory} />
-      <div className="col ns-col-is-flush ns-is-offset-4 lead-1 ns-lead-0">
+      <div className="col lg-col-is-flush lg-is-offset-4 lead-1 lg-lead-0">
         <button
           className="btn btn-blue txt-uppercase txt-size-1"
           onClick={onAddToCartClicked}
