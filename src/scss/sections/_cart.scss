@@ -29,10 +29,10 @@
 .cart-content {
   box-sizing: border-box;
   position: relative;
-  top: 2%;
+  top: 5%;
   z-index: 100;
   max-width: 600px;
-  max-height: 96vh;
+  max-height: 95vh;
   overflow-y: scroll;
   float: none;
   -webkit-overflow-scrolling: touch;
@@ -84,7 +84,7 @@
   display: inline-block;
   text-align: center;
   line-height: 100%;
-  padding: ($baseline*5.5) 0;
+  padding: .78em 0;
   border-bottom: 1px solid $blue-gray;
   border-top: 1px solid $blue-gray;
 }

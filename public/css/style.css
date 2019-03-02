@@ -3353,7 +3353,8 @@ button[disabled] {
   width: 33%;
   display: inline-block; }
   .btn-decrease svg {
-    max-width: 10px; }
+    max-width: 10px;
+    margin-bottom: 4px; }
   .btn-decrease:hover {
     background: #5e97d1; }
     .btn-decrease:hover svg g {
@@ -3365,7 +3366,8 @@ button[disabled] {
   width: 33%;
   display: inline-block; }
   .btn-increase svg {
-    max-width: 10px; }
+    max-width: 10px;
+    margin-bottom: -2px; }
   .btn-increase:hover {
     background: #5e97d1; }
     .btn-increase:hover svg g {
@@ -3562,10 +3564,10 @@ button[disabled] {
 .cart-content {
   box-sizing: border-box;
   position: relative;
-  top: 2%;
+  top: 5%;
   z-index: 100;
   max-width: 600px;
-  max-height: 96vh;
+  max-height: 95vh;
   overflow-y: scroll;
   float: none;
   -webkit-overflow-scrolling: touch;
@@ -3610,7 +3612,7 @@ button[disabled] {
   display: inline-block;
   text-align: center;
   line-height: 100%;
-  padding: 0.78568rem 0;
+  padding: .78em 0;
   border-bottom: 1px solid #f2f4f7;
   border-top: 1px solid #f2f4f7; }
 
