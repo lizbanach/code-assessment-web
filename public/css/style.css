@@ -3593,7 +3593,7 @@ button[disabled] {
       border-radius: 0; } }
 
 .cart-heading {
-  padding-bottom: 1rem;
+  padding: 1rem 0;
   border-bottom: 1px solid #d8d8d8; }
 
 .cart-total {

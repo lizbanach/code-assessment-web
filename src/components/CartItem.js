@@ -9,11 +9,11 @@ const CartItem = ({ quantity, productTitle, price, onAddToCartClicked, onRemoveC
     <div>
 
       <div className="row lead-1">
-        <div className="col col-is-5 col-is-flush txt-center">
+        <div className="col col-is-6 col-is-flush txt-center">
           <img className="cart-image" alt={productTitle} src={image} />
         </div>
-        <div className="col col-is-7 col-is-flush">
-          <p>{productTitle}</p>
+        <div className="col col-is-6 col-is-flush">
+          <p className="lead-half">{productTitle}</p>
           <p className="txt-gray txt-size-1">&#36;{price}</p>
           <p className="txt-size-1">
             <button className="btn btn-remove"
