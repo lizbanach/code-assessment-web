@@ -3615,7 +3615,7 @@ button[disabled] {
   line-height: 1em; }
 
 .cart-image {
-  max-height: 125px;
+  max-height: 100px;
   width: auto; }
 
 .product {

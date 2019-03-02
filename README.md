@@ -10,8 +10,8 @@ npm start
 
 ### 1. [Implement Responsive Design](/tasks/01-responsive-design.md)
 
-- [ ] Store
-- [ ] Cart
+- [X] Store
+- [X] Cart
 
 ### 2. [Enhance Cart Functionality](/tasks/02-cart-enhancements.md)
 
